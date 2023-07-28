@@ -1,4 +1,4 @@
-package logwa
+package main
 
 import (
 	"github.com/Liyihwa/logwa/level"
@@ -48,15 +48,19 @@ func init() {
 }
 
 func Debug(fmt string, args ...any) {
-	Std.Debug(fmt, args)
+	Std.Debug(fmt, args...)
 }
 
 func Info(fmt string, args ...any) {
-	Std.Info(fmt, args)
+	Std.Info(fmt, args...)
 }
 func Warn(fmt string, args ...any) {
-	Std.Warning(fmt, args)
+	Std.Warning(fmt, args...)
 }
 func Erro(fmt string, args ...any) {
-	Std.Error(fmt, args)
+	Std.Error(fmt, args...)
+}
+
+func main() {
+	Info("abc")
 }
