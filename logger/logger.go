@@ -29,17 +29,17 @@ func (l *Logger) write(level string, method LogMethod, message string) {
 }
 
 func (l *Logger) Debug(fmtString string, args ...any) {
-	l.write("DEBUG", l.LogMethods[level.DEBUG], fmt.Sprintf(fmtString, args))
+	l.write("DEBUG", l.LogMethods[level.DEBUG], fmt.Sprintf(fmtString, args...))
 }
 
 func (l *Logger) Info(fmtString string, args ...any) {
-	l.write("INFO", l.LogMethods[level.INFO], fmt.Sprintf(fmtString, args))
+	l.write("INFO", l.LogMethods[level.INFO], fmt.Sprintf(fmtString, args...))
 }
 
 func (l *Logger) Warning(fmtString string, args ...any) {
-	l.write("WARN", l.LogMethods[level.WARNING], fmt.Sprintf(fmtString, args))
+	l.write("WARN", l.LogMethods[level.WARNING], fmt.Sprintf(fmtString, args...))
 }
 
 func (l *Logger) Error(fmtString string, args ...any) {
-	l.write("ERRO", l.LogMethods[level.ERROR], fmt.Sprintf(fmtString, args))
+	l.write("ERRO", l.LogMethods[level.ERROR], fmt.Sprintf(fmtString, args...))
 }
