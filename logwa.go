@@ -1,8 +1,6 @@
 package logwa
 
 import (
-	"github.com/Liyihwa/logwa/level"
-	"github.com/Liyihwa/logwa/logger"
 	"os"
 )
 
@@ -31,20 +29,21 @@ type LogMethod func(datetime string, level string, message string) string
 */
 
 // -----
-var Std *logger.Logger
 
-func DefaultConfig() logger.Config {
-	return logger.Config{
+var Std *Logger
+
+func DefaultConfig() Config {
+	return Config{
 		UseColor:       true,
-		Level:          level.INFO,
+		Level:          INFO,
 		Target:         os.Stdout,
-		DataTimeFormat: logger.DefaultDateTimeFormat,
-		LogMethods:     [4]logger.LogMethod{logger.DefaultDebugMethod, logger.DefaultInfoMethod, logger.DefaultWarnMethod, logger.DefaultErrorMethod},
+		DataTimeFormat: DefaultDateTimeFormat,
+		LogMethods:     [4]LogMethod{DefaultDebugMethod, DefaultInfoMethod, DefaultWarnMethod, DefaultErrorMethod},
 	}
 }
 
 func init() {
-	Std = logger.NewLogger(DefaultConfig())
+	Std = NewLogger(DefaultConfig())
 }
 
 func Debug(fmt string, args ...any) {

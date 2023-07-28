@@ -1,4 +1,4 @@
-package level
+package logwa
 
 import "strings"
 
