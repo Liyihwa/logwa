@@ -107,7 +107,7 @@ func getColor(format string) string {
 	}
 	return "\033[" + res[0:len(res)-1] + "m"
 }
-func cfmt(useColor bool, fmtStr string, args ...any) string {
+func cfmt(fmtStr string, args ...any) string {
 	var res []byte
 	n := len(fmtStr)
 
@@ -119,9 +119,7 @@ func cfmt(useColor bool, fmtStr string, args ...any) string {
 			j := i + 1
 			for ; j < n && fmtStr[j] != '}'; j++ {
 			}
-			if useColor {
-				res = append(res, getColor(fmtStr[i+1:j])...)
-			}
+			res = append(res, getColor(fmtStr[i+1:j])...)
 			i = j
 		default:
 			res = append(res, fmtStr[i])
