@@ -1,4 +1,4 @@
-package main
+package logwa
 
 import (
 	"github.com/Liyihwa/logwa/level"
@@ -59,8 +59,4 @@ func Warn(fmt string, args ...any) {
 }
 func Erro(fmt string, args ...any) {
 	Std.Error(fmt, args...)
-}
-
-func main() {
-	Info("abc")
 }
