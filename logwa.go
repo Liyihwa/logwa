@@ -57,5 +57,5 @@ func Warn(fmt string, args ...any) {
 	Std.Warn(fmt, args...)
 }
 func Erro(fmt string, args ...any) {
-	Std.Error(fmt, args...)
+	Std.Erro(fmt, args...)
 }

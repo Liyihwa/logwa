@@ -45,6 +45,6 @@ func (l *Logger) Warn(fmtString string, args ...any) {
 	}
 }
 
-func (l *Logger) Error(fmtString string, args ...any) {
+func (l *Logger) Erro(fmtString string, args ...any) {
 	l.write("ERRO", l.LogMethods[ERROR], fmt.Sprintf(fmtString, args...))
 }
