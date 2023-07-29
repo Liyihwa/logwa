@@ -39,7 +39,7 @@ func (l *Logger) Info(fmtString string, args ...any) {
 	}
 }
 
-func (l *Logger) Warning(fmtString string, args ...any) {
+func (l *Logger) Warn(fmtString string, args ...any) {
 	if l.Level <= WARNING {
 		l.write("WARN", l.LogMethods[WARNING], fmt.Sprintf(fmtString, args...))
 	}
