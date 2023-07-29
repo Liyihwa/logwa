@@ -28,15 +28,21 @@ func (l *Logger) write(level string, method LogMethod, message string) {
 }
 
 func (l *Logger) Debug(fmtString string, args ...any) {
-	l.write("DEBUG", l.LogMethods[DEBUG], fmt.Sprintf(fmtString, args...))
+	if l.Level <= DEBUG {
+		l.write("DEBUG", l.LogMethods[DEBUG], fmt.Sprintf(fmtString, args...))
+	}
 }
 
 func (l *Logger) Info(fmtString string, args ...any) {
-	l.write("INFO", l.LogMethods[INFO], fmt.Sprintf(fmtString, args...))
+	if l.Level <= INFO {
+		l.write("INFO", l.LogMethods[INFO], fmt.Sprintf(fmtString, args...))
+	}
 }
 
 func (l *Logger) Warning(fmtString string, args ...any) {
-	l.write("WARN", l.LogMethods[WARNING], fmt.Sprintf(fmtString, args...))
+	if l.Level <= WARNING {
+		l.write("WARN", l.LogMethods[WARNING], fmt.Sprintf(fmtString, args...))
+	}
 }
 
 func (l *Logger) Error(fmtString string, args ...any) {
