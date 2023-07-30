@@ -38,8 +38,7 @@ func DefaultConfig() Config {
 		Level:          INFO,
 		Target:         os.Stdout,
 		DataTimeFormat: DefaultDateTimeFormat,
-		LogMethods:     [4]LogMethod{DefaultDebugMethod, DefaultInfoMethod, DefaultWarnMethod, DefaultErrorMethod},
-	}
+		LogMethods:     DefaultMethods()}
 }
 
 func init() {
