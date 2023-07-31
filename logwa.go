@@ -58,3 +58,7 @@ func Warn(fmt string, args ...any) {
 func Erro(fmt string, args ...any) {
 	Std.Erro(fmt, args...)
 }
+
+func SetStd(logger *Logger) {
+	Std = logger
+}
