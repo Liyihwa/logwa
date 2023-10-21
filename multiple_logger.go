@@ -4,7 +4,7 @@ type MultipleLogger struct {
 	logges []Logger
 }
 
-func NewMultipleLogger() Logger {
+func NewMultipleLogger() *MultipleLogger {
 	return &MultipleLogger{}
 }
 

@@ -9,7 +9,7 @@ type BaseLogger struct {
 	Config
 }
 
-func NewBaseLogger(c Config) Logger {
+func NewBaseLogger(c Config) *BaseLogger {
 	return &BaseLogger{c}
 }
 
