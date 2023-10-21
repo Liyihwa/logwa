@@ -3,6 +3,7 @@ package logwa
 import (
 	"fmt"
 	"io"
+	"os"
 )
 
 type Config struct {
@@ -28,4 +29,13 @@ func configVerif(config *Config) {
 			panic(fmt.Sprintf("Config's %s Method shouldn't be nil", config.Level.String()))
 		}
 	}
+}
+
+func DefaultConfig() Config {
+	return Config{
+		UseColor:       true,
+		Level:          INFO,
+		Target:         os.Stdout,
+		DataTimeFormat: DefaultDateTimeFormat,
+		LogMethods:     DefaultMethods()}
 }

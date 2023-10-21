@@ -4,6 +4,8 @@ import "fmt"
 
 type LogMethod func(datetime string, level string, message string) string
 
+// -------------------
+
 func DefaultMethods() [4]LogMethod {
 	return [4]LogMethod{DefaultDebug, DefaultInfo, DefaultWarn, DefaultError}
 }
@@ -23,6 +25,8 @@ func DefaultWarn(datetime string, level string, message string) string {
 func DefaultError(datetime string, level string, message string) string {
 	return fmt.Sprintf("%s {_rx}%5s{;} : %s\n", datetime, level, message)
 }
+
+// -------------------
 
 func LevelOnlyDebug(datetime string, level string, message string) string {
 	return fmt.Sprintf("{g}%5s{;} : %s\n", level, message)
